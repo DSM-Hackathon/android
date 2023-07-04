@@ -36,5 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 double latitude = location.getLatitude();
             }
         }
+
     }
+
+
+
+
 }
