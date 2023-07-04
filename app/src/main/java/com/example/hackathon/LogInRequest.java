@@ -5,10 +5,13 @@ public class LogInRequest {
     private String accountId;
     private String password;
 
+    private String deviceToken;
 
-    public LogInRequest(String accountId, String password){
+
+    public LogInRequest(String accountId, String password, String deviceToken){
         this.accountId = accountId;
         this.password = password;
+        this.deviceToken = deviceToken;
     }
 
     public String get(){
@@ -19,12 +22,20 @@ public class LogInRequest {
         this.accountId = accountId;
     }
 
-    public String getPassword() {
+    public String getpassword() {
         return password;
     }
 
-    public void setPassword(String password){
+    public void setpassword(String password){
         this.password = password;
+    }
+
+    public String getDeviceToken(){
+        return  deviceToken;
+    }
+
+    public void setDeviceToken(String deviceToken){
+        this.deviceToken = deviceToken;
     }
 
 }
