@@ -6,13 +6,13 @@ import retrofit2.http.POST;
 
 public interface SeverApi {
 
-    @POST("/login")
+    @POST("/auth/login")
     Call<LogInResponse> Login (
             @Body LogInRequest logInRequest
     );
 
-    @POST("/signup")
-    Call<SignupResponse> Signup (
+    @POST("/auth/signup")
+    Call<Void> Signup (
             @Body SignupRequest signupRequest
     );
 }
