@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    viewBinding {
+        enabled true
+    }
 }
 
 dependencies {
@@ -40,4 +44,9 @@ dependencies {
     //구글 지도
     implementation('com.google.android.gms:play-services-maps:18.1.0')
     implementation('com.google.android.gms:play-services-location:21.0.1')
+
+    //api연동
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
 }
