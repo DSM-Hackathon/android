@@ -4,6 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_background_img"
     tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="135dp"
+        android:layout_height="57dp"
+        android:src="@drawable/logo_img"
+        android:layout_marginTop="230dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="재해로부터 안전하고 싶다면?"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+    <TextView
+        android:id="@+id/login_login_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOG IN"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tv"/>
+    
+    <EditText
+        android:id="@+id/login_id_et"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/radious"
+        android:layout_marginTop="24dp"
+        android:hint="아이디를 입력해주세요"
+        android:paddingLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_login_tv" />
+
+    <EditText
+        android:id="@+id/login_password_et"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/radious"
+        android:layout_marginTop="24dp"
+        android:hint="비밀번호를 입력해주세요"
+        android:paddingLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_id_et" />
+
+    <Button
+        android:id="@+id/login_start_btn"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radious"
+        android:text="EVA 시작하기"
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_password_et"/>
+
+    <ImageView
+        android:id="@+id/login_go_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/move_signup_page_img"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_start_btn"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

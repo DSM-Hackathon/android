@@ -4,12 +4,12 @@ public class SignupRequest {
     private String accountId;
     private String password;
 
-    private String passwordcheck;
+    private String passwordCheck;
 
     public SignupRequest(String accountId, String password, String passwordcheck){
         this.accountId = accountId;
         this.password = password;
-        this.passwordcheck = passwordcheck;
+        this.passwordCheck = passwordcheck;
     }
 
     public String getaccountId() {
@@ -28,10 +28,10 @@ public class SignupRequest {
         this.password = password;
     }
 
-    public String getPasswordcheck() {
-        return passwordcheck;
+    public String getpasswordcheck() {
+        return passwordCheck;
     }
-    public void setPasswordcheck(String passwordcheck){
-        this.passwordcheck = passwordcheck;
+    public void setpasswordcheck(String passwordcheck){
+        this.passwordCheck = passwordcheck;
     }
 }
