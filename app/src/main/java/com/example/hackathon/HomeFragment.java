@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.CreationExtras;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -36,6 +37,11 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
         }
 
         mapFragment.getMapAsync(this);
+
+        TextView report_user_name = (TextView) rootView.findViewById(R.id.home_user_name);
+        TextView report_time = (TextView) rootView.findViewById(R.id.home_report_time);
+        TextView report_place = (TextView) rootView.findViewById(R.id.home_report_place);
+
         return rootView;
     }
 
