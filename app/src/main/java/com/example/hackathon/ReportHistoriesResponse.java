@@ -1,6 +1,8 @@
 package com.example.hackathon;
 
-public class ReportHistoryResponse {
+import java.util.List;
 
-    
+public class ReportHistoriesResponse {
+
+    List<ReportHistoryResponse> reportHistoryResponses;
 }

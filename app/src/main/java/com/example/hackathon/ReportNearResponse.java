@@ -1,6 +1,6 @@
 package com.example.hackathon;
 
-public class ReportNearPesponse {
+public class ReportNearResponse {
 
     Long reporId;
     String reporter;

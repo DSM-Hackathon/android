@@ -20,12 +20,20 @@ import com.example.hackathon.Adapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity implements DataListener{
 
     TabLayout tabs;
     AalramFragment aalramFragment;
     HomeFragment homeFragment;
     ReportFragment reportFragment;
+
+    static Double latitude=6.0;
+
+    static Double longitude=9.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,24 @@ public class MainActivity extends AppCompatActivity implements DataListener{
                 Log.d("TEST","위도"+latitude);
             }
         }
+
+
+
+        SeverApi severApi = ApiProvider.getInstance().create(SeverApi.class);
+
+        severApi.reportMain("Bearer "+LoginActivity.puToken).enqueue(new Callback<ReportMainResponse>() {
+            @Override
+            public void onResponse(Call<ReportMainResponse> call, Response<ReportMainResponse> response) {
+                if (response.isSuccessful()) {
+                    latitude = response.body().latitude;
+                    longitude = response.body().longitude;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ReportMainResponse> call, Throwable t) {
+            }
+        });
 
         aalramFragment = new AalramFragment();
         homeFragment = new HomeFragment();

@@ -23,4 +23,19 @@ public interface SeverApi {
             @Header("Authorization") String Token,
             @Body ReportRequest reportRequest
     );
+
+    @GET("/report/near")
+    Call<ReportNearResponse> reportNear (
+            @Header("Authorization") String Token
+    );
+
+    @GET("/report/main")
+    Call<ReportMainResponse> reportMain (
+            @Header("Authorization") String Token
+    );
+
+    @GET("/report/all")
+    Call<ReportAllResponse> reportAll (
+            @Header("Authorization") String Token
+    );
 }
