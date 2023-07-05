@@ -44,8 +44,8 @@ import java.util.Objects;
 public class ReportFragment extends Fragment implements OnMapReadyCallback,View.OnClickListener{
 
     private GoogleMap gmap;
-    static double x = 0;
-    static double y = 0;
+    public static double x = 0;
+    public static double y = 0;
     private DataListener dataListener;
 
     View reportBtn;

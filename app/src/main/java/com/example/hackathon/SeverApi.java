@@ -2,6 +2,8 @@ package com.example.hackathon;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface SeverApi {
@@ -14,5 +16,11 @@ public interface SeverApi {
     @POST("/auth/signup")
     Call<Void> Signup (
             @Body SignupRequest signupRequest
+    );
+
+    @POST("/report")
+    Call<Void> report (
+            @Header("Authorization") String Token,
+            @Body ReportRequest reportRequest
     );
 }

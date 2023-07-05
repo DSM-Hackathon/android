@@ -18,6 +18,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
+    public static String puToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LogInResponse> call, Response<LogInResponse> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "로그인에 성공 했습니다!",Toast.LENGTH_SHORT).show();
+                    puToken = response.body().getAccessToken();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
