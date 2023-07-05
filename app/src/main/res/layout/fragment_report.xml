@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-    <ImageButton
+    <Button
         android:id="@+id/report_btn"
         android:layout_width="100dp"
         android:layout_height="100dp"

@@ -1,6 +1,7 @@
 package com.example.hackathon;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -37,6 +38,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Objects;
+
 
 public class ReportFragment extends Fragment implements OnMapReadyCallback,View.OnClickListener{
 
@@ -45,7 +48,8 @@ public class ReportFragment extends Fragment implements OnMapReadyCallback,View.
     static double y = 0;
     private DataListener dataListener;
 
-    ImageButton reportBtn;
+    View reportBtn;
+    View clearBtn;
     EditText edtDetail;
     ConstraintSet.Layout dialogView;
 
@@ -55,7 +59,6 @@ public class ReportFragment extends Fragment implements OnMapReadyCallback,View.
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_report, container, false);
 
-        reportBtn = rootView.findViewById(R.id.report_btn);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.report_map);
         if (mapFragment == null) {
             mapFragment = SupportMapFragment.newInstance();
@@ -75,7 +78,7 @@ public class ReportFragment extends Fragment implements OnMapReadyCallback,View.
 //            Log.d("TEST","위도"+x);
 //        }
 
-        ImageButton open = (ImageButton) rootView.findViewById(R.id.report_btn);
+        Button open = (Button) rootView.findViewById(R.id.report_btn);
         open.setOnClickListener(this);
 
         return rootView;
@@ -119,20 +122,19 @@ public class ReportFragment extends Fragment implements OnMapReadyCallback,View.
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
+        reportBtn = v.findViewById(R.id.report_btn);
+        clearBtn = v.findViewById(R.id.report_btn);
+        reportBtn.setOnClickListener(v1 -> {
+            Bundle args = new Bundle();
+            args.putString("key", "value");
+            FragmentDialog dialog = new FragmentDialog();
+            dialog.setArguments(args);
 
-        reportBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle args = new Bundle();
-                args.putString("key","value");
-                FragmentDialog dialog = new FragmentDialog();
-                dialog.setArguments(args);
-                Log.d("TEST", String.valueOf(args));
-
-                dialog.show(getActivity().getSupportFragmentManager(),"tag");
-            }
+            dialog.show(getActivity().getSupportFragmentManager(), "tag");
         });
+
     }
 }

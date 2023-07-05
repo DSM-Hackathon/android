@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/img_logo2"
         android:supportsRtl="true"
-        android:enableOnBackInvokedCallback="false"
+        android:enableOnBackInvokedCallback="true"
         android:theme="@style/Theme.Hackathon"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
