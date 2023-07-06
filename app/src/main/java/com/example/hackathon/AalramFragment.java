@@ -63,7 +63,6 @@ public class AalramFragment extends Fragment {
             @Override
             public void onResponse(Call<ReportAllResponse> call, Response<ReportAllResponse> response) {
                 if (response.isSuccessful()){
-                    List <ReportResponseList> listName = response.body().reportResponseList;
                     RecyclerView recyclerView = container.findViewById(R.id.recyclerview);
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                     recyclerView.setLayoutManager(linearLayoutManager);

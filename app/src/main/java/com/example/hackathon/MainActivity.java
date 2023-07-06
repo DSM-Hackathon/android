@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity implements DataListener{
     HomeFragment homeFragment;
     ReportFragment reportFragment;
 
-    static Double latitude=6.0;
+    static Double mlatitude=6.0;
 
-    static Double longitude=9.0;
+    static Double mlongitude=9.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements DataListener{
             @Override
             public void onResponse(Call<ReportMainResponse> call, Response<ReportMainResponse> response) {
                 if (response.isSuccessful()) {
-                    latitude = response.body().latitude;
-                    longitude = response.body().longitude;
+                    mlatitude = response.body().latitude;
+                    mlongitude = response.body().longitude;
                 }
             }
 

@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng SEOUL = new LatLng(MainActivity.latitude, MainActivity.longitude);
+        LatLng SEOUL = new LatLng(MainActivity.mlatitude, MainActivity.mlongitude);
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(SEOUL);

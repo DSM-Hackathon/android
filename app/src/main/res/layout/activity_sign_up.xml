@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/signup_logo"
-        android:layout_width="135dp"
-        android:layout_height="57dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/logo_img"
         android:layout_marginTop="230dp"
         app:layout_constraintLeft_toLeftOf="parent"
