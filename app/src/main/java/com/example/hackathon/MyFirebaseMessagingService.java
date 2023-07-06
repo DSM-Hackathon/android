@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.PowerManager;
 import android.os.Vibrator;
 import android.util.Log;
@@ -68,10 +69,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         .setContentTitle(title)
                         .setContentText(body)
                         .setAutoCancel(true)
-//                        .setSound(defaultSoundUri)
+                        .setSound(Uri.parse(Environment.getExternalStorageDirectory().getPath()+"/bell.mp3"))
                         .setContentIntent(pendingIntent)
-                        .setPriority(NotificationCompat.PRIORITY_HIGH)
-                ;
+                        .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
